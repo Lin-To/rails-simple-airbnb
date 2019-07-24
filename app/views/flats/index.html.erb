@@ -1,0 +1,38 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <h1>list of all flats </h1>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+         <%= link_to "Add new flat", new_flat_path, class:"btn btn-primary" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+
+
+
+
+  <div class="row">
+  <% @flats.each do |f| %>
+    <div class="col-4">
+      <div class="card w-100 h-100 text-center p-3 my-3">
+      <p>Name: <%= f.name %></p>
+       <p>Address: <%= f.address %></p>
+       <p>Description: <%= f.description %></p>
+       <p>Price: <%= f.price_per_night %></p>
+       <p>Number of Guest: <%= f.number_of_guest %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
